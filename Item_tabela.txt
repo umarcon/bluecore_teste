@@ -1,0 +1,11 @@
+CREATE TABLE `item` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_grupo` int DEFAULT NULL,
+  `item_codigo` varchar(30) NOT NULL,
+  `item_descricao` varchar(150) DEFAULT NULL,
+  `item_valor` decimal(15,2) unsigned zerofill DEFAULT NULL,
+  `item_qtde` int DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_ITEM_GRUPO_idx` (`id_grupo`),
+  CONSTRAINT `FK_ITEM_GRUPO` FOREIGN KEY (`id_grupo`) REFERENCES `grupo` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
